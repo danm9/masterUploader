@@ -1,9 +1,11 @@
 <?php
 
-define('db_username', 'root');
-define('db_password', 'nef');
-define('db_host', '127.0.0.1');
-define('db_name', 'daniel_test');
+//define('db_username', 'root');
+//define('db_password', 'nef');
+//define('db_host', '127.0.0.1');
+//define('db_name', 'daniel_test');
+
+include_once dirname(__FILE__) . '/config.php';
 
 $conn = new mysqli(db_host, db_username, db_password, db_name);
 
@@ -39,9 +41,9 @@ foreach($textAreaData as $line) {
 	$query .= "$fields) VALUES ($values)";
 	echo "Executing: $query\n";
 	if ($conn->query($query)) {
-		echo "SUCCESS!";
+		echo "SUCCESS!<br>";
 	}
 	else {
-		echo $conn->error;
+		echo $conn->error . "<br>";
 	}
 }

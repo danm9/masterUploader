@@ -8,7 +8,7 @@ var $max_fields = 1;
 $("#table_selector").change(function(){
 	var $selected = $("#table_selector option:selected").text();
 	$table_name = $selected;
-	$("#field_header + select").remove();
+	$(".field_sel").remove()
 	$("#add_field_button").remove()
 	$("#remove_field_button").remove()
 	$.ajax({
@@ -56,7 +56,8 @@ $("#mainform").submit(function(e){
 	});
 	$.post($url, $fields)
 	.done(function(data){
-		alert(data);
+		var w = window.open()
+		$(w.document.body).html("<HTML>" + data + "</HTML>");
 	});
 });
 

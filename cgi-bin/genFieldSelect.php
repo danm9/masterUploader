@@ -2,10 +2,12 @@
 
 session_start();
 
-define('db_username', 'root');
-define('db_password', 'nef');
-define('db_host', '127.0.0.1');
-define('db_name', 'testdb_2');
+//define('db_username', 'root');
+//define('db_password', 'nef');
+//define('db_host', '127.0.0.1');
+//define('db_name', 'testdb_2');
+
+include_once dirname(__FILE__) . '/config.php';
 
 $conn = new mysqli(db_host, db_username, db_password, db_name);
 
